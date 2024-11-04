@@ -1,0 +1,13 @@
+{
+  "groupID1@g.us": {
+    "participant1@whatsapp.net": 15,
+    "participant2@whatsapp.net": 8
+  },
+  "userID1@whatsapp.net": {
+    "userID1@whatsapp.net": 12
+  },
+  "groupID2@g.us": {
+    "participant3@whatsapp.net": 10,
+    "participant4@whatsapp.net": 5
+  }
+}
