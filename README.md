@@ -19,6 +19,9 @@ Jika Anda memiliki pertanyaan atau ingin mendapatkan izin untuk menggunakan skri
 - **Email**: [vynaavalerie@gmail.com](mailto:email@example.com)
 - **Instagram**: [@vynaa_valerie](https://instagram.com/vynaa_valerie)
 - **WhatsApp**: [Klik di sini](https://wa.me/6282389924037)
+Silahkan Hubungi kami untuk minta akses jika ingin menggunakan 
+
+- **REVIEW**: [Klik di sini](https://youtu.be/pwh_5tVs3R4?si=tv97tjnHWwyIqUOC)
 
 ## Terima Kasih
 Terima kasih telah menggunakan skrip ini. Semoga bermanfaat!
