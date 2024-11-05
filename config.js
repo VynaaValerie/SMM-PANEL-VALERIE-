@@ -11,14 +11,14 @@ import { fileURLToPath } from 'url';
 
 /*=========== LINK ============*/
 global.tokopay = {
-    merchantID: 'M240701FIBRZ175',
-    secretKey: '79f11be7847b1f018336776cef9c78d988530d5758527a032acd1f08ea429f28',
+    merchantID: '_',
+    secretKey: '_',
     link: 'https://api.tokopay.id'
 };
 
 global.smm = {
-    apiKey: 'fbb2d8-41bf6e-dfd481-d4c487-8942fa',
-    apiId: 'RnRXS2NNaUJyYkhGeDU2L1hWV2ZSZz09',
+    apiKey: '_',
+    apiId: '_',
     link: 'https://valerieconnect.shop'
 };
 
