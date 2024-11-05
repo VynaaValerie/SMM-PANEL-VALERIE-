@@ -1,13 +1,7 @@
 import fs from 'fs';
 
-// Load service data with error handling
-let services;
-try {
-    services = JSON.parse(fs.readFileSync('./lib/service.json'));
-} catch (error) {
-    console.error("Error loading or parsing service.json:", error);
-    throw `[❗] Gagal memuat data layanan. Pastikan file 'service.json' sudah benar.`;
-}
+// Load service data
+const services = JSON.parse(fs.readFileSync('./lib/service.json'));
 
 // Fuzzy search function
 let searchService = (query) => {
@@ -42,7 +36,7 @@ let handler = async function (m, { text }) {
         
         // Indicate if there are more categories
         if (categories.length > 5) {
-            response += `\nKetik nama kategori *.cariproduk tiktok* atau ketik *allproduk* untuk melihat layanan lebih banyak.`;
+            response += `\nKetik nama kategori *.cariproduk tiktok* atau ketik *.allproduk* untuk melihat layanan lebih banyak.`;
         }
 
         return await m.reply(response);
@@ -52,15 +46,12 @@ let handler = async function (m, { text }) {
     let results = searchService(text);
     
     if (results.length === 0) {
-        return await m.reply(`[❗] Tidak ditemukan layanan atau produk dengan nama atau kategori yang sesuai "${text}".`);
+        throw `[❗] Tidak ditemukan layanan atau produk dengan nama atau kategori yang sesuai "${text}" coba ketik *.allservice* dulu lalu coba cari lagi`;
     }
-
-    // Limit results if too many are found
-    let limitedResults = results.slice(0, 10); // Limit to 10 results for readability
 
     // Format the search results to display all results
     let response = `*Hasil Pencarian untuk:* "${text}"\n\n`;
-    limitedResults.forEach(service => {
+    results.forEach(service => {
         response += `• *ID:* ${service.id}\n`;
         response += `• *Kategori:* ${service.category}\n`;
         response += `• *Nama:* ${service.name}\n`;
@@ -71,11 +62,6 @@ let handler = async function (m, { text }) {
         response += `• *Status:* ${service.status === "1" ? "Tersedia" : "Tidak Tersedia"}\n`;
         response += `• *Refill:* ${service.refill === "1" ? "Ya" : "Tidak"}\n\n`;
     });
-
-    // Notify user if there are more results not shown
-    if (results.length > 10) {
-        response += `\n*[ℹ️]* Ada lebih banyak hasil yang tidak ditampilkan. Coba gunakan kata kunci yang lebih spesifik.`;
-    }
 
     // Send response with results
     await m.reply(response);
